@@ -1,0 +1,9 @@
+# Aliasger Sabir
+
+> A quiet digital exhibition of work by Aliasger Sabir — developer, designer, and student of typography.
+
+The site is a single-page handcrafted exhibition presenting vision, craft, and mastery through five sections: Hero, About, Projects, Certificates, and Contact.
+
+## Pages
+
+- [Home](/): The full exhibition — hero, about, projects gallery, certificates, and contact.
