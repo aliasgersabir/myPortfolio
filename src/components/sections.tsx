@@ -81,7 +81,7 @@ export function Hero() {
 
       <h1
         ref={wordRef}
-        className="display pointer-events-none absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-ink/90 select-none text-[clamp(4rem,26vw,22rem)] leading-[0.78]"
+        className="display pointer-events-none absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-ink/90 select-none text-[clamp(2.8rem,26vw,22rem)] leading-[0.78]"
         aria-label="Designer"
       >
         {letters.map((l, i) => (
@@ -96,7 +96,7 @@ export function Hero() {
           ref={imgRef}
           src={alexander}
           alt="Alexander the Great — an oil study, mounted"
-          className="h-[82vh] md:h-[92vh] w-auto max-w-none object-contain drop-shadow-[0_60px_80px_rgba(0,0,0,0.75)]"
+          className="h-[60vh] md:h-[92vh] w-auto max-w-none object-contain drop-shadow-[0_60px_80px_rgba(0,0,0,0.75)]"
           draggable={false}
         />
       </div>
@@ -562,10 +562,10 @@ export function Certificates() {
     <section ref={ref} id="certificates" className="relative w-full overflow-hidden py-32 md:py-48">
       <div className="relative mx-auto max-w-[1600px] px-6 md:px-10">
         <p className="eyebrow mb-6 text-center">IV — A record of study</p>
-        <div className="relative mx-auto flex h-[62vh] w-full items-center justify-center md:h-[78vh]">
+        <div className="relative mx-auto flex flex-col items-center justify-center w-full md:flex-row md:h-[78vh] md:items-center">
           <h2
             ref={wordRef}
-            className="display pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-ink/90 select-none text-[clamp(4rem,20vw,18rem)] leading-[0.82] z-[1]"
+            className="display pointer-events-none whitespace-nowrap text-ink/90 select-none leading-[0.82] z-[1] text-[clamp(3rem,18vw,18rem)] md:text-[clamp(4rem,20vw,18rem)] md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 mb-4 md:mb-0"
           >
             MASTERY
           </h2>
@@ -573,7 +573,7 @@ export function Certificates() {
             ref={leoRef}
             src={leonardo}
             alt="Leonardo — an engraved portrait, after the master"
-            className="relative z-[2] h-full w-auto max-w-none object-contain drop-shadow-[0_50px_70px_rgba(0,0,0,0.7)]"
+            className="relative z-[2] h-[42vh] md:h-full w-auto max-w-none object-contain drop-shadow-[0_50px_70px_rgba(0,0,0,0.7)] md:h-full"
             style={{ filter: "contrast(1.05) brightness(1.02)" }}
             draggable={false}
           />

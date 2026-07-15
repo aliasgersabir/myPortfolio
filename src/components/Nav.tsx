@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#certificates", label: "Certificates" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about", label: "About", icon: "👤" },
+  { href: "#projects", label: "Projects", icon: "🧩" },
+  { href: "#certificates", label: "Certificates", icon: "🎓" },
+  { href: "#contact", label: "Contact", icon: "C" },
 ];
 
 export function Nav() {
@@ -37,6 +37,7 @@ export function Nav() {
           Aliasger Sabir
         </a>
         <span className="hidden sm:block h-4 w-px bg-border" aria-hidden />
+        {/* Desktop: full text labels */}
         <ul className="hidden sm:flex items-center gap-6">
           {links.map((l) => (
             <li key={l.href}>
@@ -45,6 +46,21 @@ export function Nav() {
                 className="eyebrow text-ink/70 hover:text-accent transition-colors duration-500"
               >
                 {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        {/* Mobile: icon links */}
+        <ul className="flex sm:hidden items-center gap-3">
+          {links.map((l) => (
+            <li key={l.href}>
+              <a
+                href={l.href}
+                className="flex items-center justify-center w-8 h-8 rounded-full border border-ink/15 bg-ink/5 text-ink/80 hover:text-accent hover:border-accent/50 transition-colors duration-500 text-sm"
+                aria-label={l.label}
+                style={l.icon === "C" ? { fontFamily: "var(--font-display)", fontWeight: 700 } : undefined}
+              >
+                {l.icon}
               </a>
             </li>
           ))}

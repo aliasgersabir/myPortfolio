@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Cursor } from "@/components/Cursor";
 import { Nav } from "@/components/Nav";
@@ -11,24 +11,26 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const [mounted, setMounted] = useState(false);
   const [loaded, setLoaded] = useState(false);
-  useEffect(() => { setMounted(true); }, []);
 
   return (
     <>
-      {mounted && !loaded && <Loader onDone={() => setLoaded(true)} />}
-      <Cursor />
-      <SmoothScroll>
-        <Nav />
-        <main className="relative">
-          <Hero />
-          <About />
-          <Projects />
-          <Certificates />
-          <Contact />
-        </main>
-      </SmoothScroll>
+      {!loaded && <Loader onDone={() => setLoaded(true)} />}
+      {loaded && (
+        <>
+          <Cursor />
+          <SmoothScroll>
+            <Nav />
+            <main className="relative">
+              <Hero />
+              <About />
+              <Projects />
+              <Certificates />
+              <Contact />
+            </main>
+          </SmoothScroll>
+        </>
+      )}
     </>
   );
 }
