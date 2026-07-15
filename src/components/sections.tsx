@@ -48,7 +48,7 @@ export function Hero() {
       });
       gsap.fromTo(imgRef.current,
         { yPercent: 8, y: 0, opacity: 0, scale: 1.06 },
-        { y: 90, opacity: 1, scale: 1, duration: 2.6, ease: "expo.out", delay: 0.55 }
+        { y: 125, opacity: 1, scale: 1, duration: 2.6, ease: "expo.out", delay: 0.55 }
       );
       // subtle floating
       gsap.to(imgRef.current, {
@@ -82,7 +82,7 @@ export function Hero() {
 
       <h1
         ref={wordRef}
-        className="display pointer-events-none absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-ink/90 select-none text-[clamp(3.2rem,26vw,22rem)] leading-[0.78]"
+        className="display pointer-events-none absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-ink/90 select-none text-[clamp(2.2rem,17vw,22rem)] leading-[0.78]"
         aria-label="Designer"
       >
         {letters.map((l, i) => (
@@ -549,7 +549,7 @@ export function Certificates() {
       });
       gsap.fromTo(leoRef.current,
         { opacity: 0, scale: 1.04, y: 0 },
-        { y: 90, opacity: 1, scale: 1, duration: 2.4, ease: "expo.out",
+        { y: 200, opacity: 1, scale: 1, duration: 2.4, ease: "expo.out",
           scrollTrigger: { trigger: ref.current, start: "top 75%", once: true }
         }
       );
