@@ -46,9 +46,10 @@ export function Hero() {
         yPercent: 0, rotate: 0, opacity: 1,
         duration: 1.8, ease: "expo.out", stagger: 0.06, delay: 0.25,
       });
-      gsap.from(imgRef.current, {
-        yPercent: 8, opacity: 0, scale: 1.06, duration: 2.6, ease: "expo.out", delay: 0.55,
-      });
+      gsap.fromTo(imgRef.current,
+        { yPercent: 8, y: 0, opacity: 0, scale: 1.06 },
+        { y: 90, opacity: 1, scale: 1, duration: 2.6, ease: "expo.out", delay: 0.55 }
+      );
       // subtle floating
       gsap.to(imgRef.current, {
         y: -14, duration: 4.5, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 3,
@@ -96,7 +97,7 @@ export function Hero() {
           ref={imgRef}
           src={alexander}
           alt="Alexander the Great — an oil study, mounted"
-          className="h-[52vh] md:h-[80vh] mt-[90px] w-auto max-w-none object-contain drop-shadow-[0_60px_80px_rgba(0,0,0,0.75)]"
+          className="h-[52vh] md:h-[80vh] w-auto max-w-none object-contain drop-shadow-[0_60px_80px_rgba(0,0,0,0.75)]"
           draggable={false}
         />
       </div>
@@ -546,10 +547,12 @@ export function Certificates() {
         yPercent: 10, opacity: 0, duration: 2, ease: "expo.out",
         scrollTrigger: { trigger: ref.current, start: "top 75%", once: true },
       });
-      gsap.from(leoRef.current, {
-        opacity: 0, scale: 1.04, duration: 2.4, ease: "expo.out",
-        scrollTrigger: { trigger: ref.current, start: "top 75%", once: true },
-      });
+      gsap.fromTo(leoRef.current,
+        { opacity: 0, scale: 1.04, y: 0 },
+        { y: 90, opacity: 1, scale: 1, duration: 2.4, ease: "expo.out",
+          scrollTrigger: { trigger: ref.current, start: "top 75%", once: true }
+        }
+      );
       gsap.to(leoRef.current, {
         yPercent: -6,
         scrollTrigger: { trigger: ref.current, start: "top bottom", end: "bottom top", scrub: 1.2 },
@@ -573,7 +576,7 @@ export function Certificates() {
             ref={leoRef}
             src={leonardo}
             alt="Leonardo — an engraved portrait, after the master"
-            className="relative z-[2] h-[48vh] md:h-full mt-[90px] w-auto max-w-none object-contain drop-shadow-[0_50px_70px_rgba(0,0,0,0.7)]"
+            className="relative z-[2] h-[48vh] md:h-full w-auto max-w-none object-contain drop-shadow-[0_50px_70px_rgba(0,0,0,0.7)]"
             style={{ filter: "contrast(1.05) brightness(1.02)" }}
             draggable={false}
           />
