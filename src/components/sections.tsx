@@ -96,7 +96,7 @@ export function Hero() {
           ref={imgRef}
           src={alexander}
           alt="Alexander the Great — an oil study, mounted"
-          className="h-[52vh] md:h-[80vh] w-auto max-w-none object-contain drop-shadow-[0_60px_80px_rgba(0,0,0,0.75)]"
+          className="h-[52vh] md:h-[80vh] mt-[60px] w-auto max-w-none object-contain drop-shadow-[0_60px_80px_rgba(0,0,0,0.75)]"
           draggable={false}
         />
       </div>
@@ -573,7 +573,7 @@ export function Certificates() {
             ref={leoRef}
             src={leonardo}
             alt="Leonardo — an engraved portrait, after the master"
-            className="relative z-[2] h-[48vh] md:h-full w-auto max-w-none object-contain drop-shadow-[0_50px_70px_rgba(0,0,0,0.7)]"
+            className="relative z-[2] h-[48vh] md:h-full mt-[60px] w-auto max-w-none object-contain drop-shadow-[0_50px_70px_rgba(0,0,0,0.7)]"
             style={{ filter: "contrast(1.05) brightness(1.02)" }}
             draggable={false}
           />
