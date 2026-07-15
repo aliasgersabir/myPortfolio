@@ -81,7 +81,7 @@ export function Hero() {
 
       <h1
         ref={wordRef}
-        className="display pointer-events-none absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-ink/90 select-none text-[clamp(2.8rem,26vw,22rem)] leading-[0.78]"
+        className="display pointer-events-none absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-accent select-none text-[clamp(3.2rem,26vw,22rem)] leading-[0.78]"
         aria-label="Designer"
       >
         {letters.map((l, i) => (
@@ -96,7 +96,7 @@ export function Hero() {
           ref={imgRef}
           src={alexander}
           alt="Alexander the Great — an oil study, mounted"
-          className="h-[60vh] md:h-[92vh] w-auto max-w-none object-contain drop-shadow-[0_60px_80px_rgba(0,0,0,0.75)]"
+          className="h-[70vh] md:h-[92vh] w-auto max-w-none object-contain drop-shadow-[0_60px_80px_rgba(0,0,0,0.75)]"
           draggable={false}
         />
       </div>
@@ -565,7 +565,7 @@ export function Certificates() {
         <div className="relative mx-auto flex flex-col items-center justify-center w-full md:flex-row md:h-[78vh] md:items-center">
           <h2
             ref={wordRef}
-            className="display pointer-events-none whitespace-nowrap text-ink/90 select-none leading-[0.82] z-[1] text-[clamp(3rem,18vw,18rem)] md:text-[clamp(4rem,20vw,18rem)] md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 mb-4 md:mb-0"
+            className="display pointer-events-none whitespace-nowrap text-accent select-none leading-[0.82] z-[1] text-[clamp(3rem,18vw,18rem)] md:text-[clamp(4rem,20vw,18rem)] md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 mb-4 md:mb-0"
           >
             MASTERY
           </h2>

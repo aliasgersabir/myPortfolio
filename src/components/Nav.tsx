@@ -1,11 +1,51 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#about", label: "About", icon: "👤" },
-  { href: "#projects", label: "Projects", icon: "🧩" },
-  { href: "#certificates", label: "Certificates", icon: "🎓" },
-  { href: "#contact", label: "Contact", icon: "C" },
+  { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
+  { href: "#certificates", label: "Certificates" },
+  { href: "#contact", label: "Contact" },
 ];
+
+function AboutIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
+
+function ProjectsIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="7" height="7" />
+      <rect x="14" y="3" width="7" height="7" />
+      <rect x="14" y="14" width="7" height="7" />
+      <rect x="3" y="14" width="7" height="7" />
+    </svg>
+  );
+}
+
+function CertIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+      <path d="M6 12v5c3 3 6 3 6 3s3 0 6-3v-5" />
+    </svg>
+  );
+}
+
+function ContactIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+    </svg>
+  );
+}
+
+const icons = [AboutIcon, ProjectsIcon, CertIcon, ContactIcon];
 
 export function Nav() {
   const [solid, setSolid] = useState(false);
@@ -50,20 +90,22 @@ export function Nav() {
             </li>
           ))}
         </ul>
-        {/* Mobile: icon links */}
-        <ul className="flex sm:hidden items-center gap-3">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className="flex items-center justify-center w-8 h-8 rounded-full border border-ink/15 bg-ink/5 text-ink/80 hover:text-accent hover:border-accent/50 transition-colors duration-500 text-sm"
-                aria-label={l.label}
-                style={l.icon === "C" ? { fontFamily: "var(--font-display)", fontWeight: 700 } : undefined}
-              >
-                {l.icon}
-              </a>
-            </li>
-          ))}
+        {/* Mobile: outline icon links */}
+        <ul className="flex sm:hidden items-center gap-4">
+          {links.map((l, i) => {
+            const Icon = icons[i];
+            return (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className="flex items-center justify-center text-ink/60 hover:text-accent transition-colors duration-500"
+                  aria-label={l.label}
+                >
+                  <Icon />
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </nav>
